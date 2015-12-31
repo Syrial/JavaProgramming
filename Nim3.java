@@ -19,7 +19,7 @@ public class Nim3{
 
 		Random r = new Random();
 
-		int CompPile = 1 + r.nextInt(3); 
+		int CompPileNum = 5; 
 
 		int CompNum = 1 + r.nextInt(5);
 
@@ -47,14 +47,22 @@ public class Nim3{
 			System.out.print("\n" + CurrPlayer + ", choose a pile: ");
 
 			if (CurrPlayer.equals(TheComputer)){
-				CompPile = 1 + r.nextInt(3);
-				switch(CompPile) {
-					case 1:  PileChoice = "A";
-					case 2:  PileChoice = "B";
-					case 3:  PileChoice = "C";
-					  	 break;
-					default: break;
+
+				if (NimA != 0){
+					PileChoice = "A";
+					CompPileNum = NimA;
 				}
+				else if (NimB != 0){
+					PileChoice = "B";
+					CompPileNum = NimB;
+				}
+				else if	(NimC != 0){
+					PileChoice = "C";
+					CompPileNum = NimC;
+				}
+				else
+					System.out.println("Do something about this!");
+				
 				System.out.println(PileChoice + "\n"); 	
 				
 			}
@@ -71,7 +79,7 @@ public class Nim3{
 			System.out.print("How many to remove from pile " + PileChoice + ": ");
 
 			if (CurrPlayer.equals(TheComputer)){
-				CompNum = 1 + r.nextInt(5);
+				CompNum = 1 + r.nextInt(CompPileNum);
 				NimNum = CompNum;
 				System.out.println(NimNum + "\n");
 			}

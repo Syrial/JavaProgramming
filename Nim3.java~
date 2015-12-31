@@ -1,15 +1,12 @@
 import java.util.Scanner;
 
-public class Nim2{
+public class Nim3{
 	public static void main(String[] args){
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.print("Player 1, enter your name: ");
+		System.out.print("Player, please enter your name: ");
 		String Player1 = input.next();
-		
-		System.out.print("Player 2, enter your name: ");
-		String Player2 = input.next();
 		
 		System.out.println();
 	
