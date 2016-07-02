@@ -9,8 +9,11 @@ public class Blackjack
 		Scanner kb = new Scanner(System.in);
 		
 		System.out.println("Welcome to Eric's Blackjack Table!");
-		
-		int PC1 = r.nextInt(10) + 1;
+		System.out.print("Enter your wager please: $");
+
+		int PlayerWager = kb.nextInt();
+
+                int PC1 = r.nextInt(10) + 1;
 		int PC2 = r.nextInt(10) + 1;
 		
 		System.out.println("\nYou draw a " + PC1 + " and a " + PC2 + ".");
@@ -79,10 +82,18 @@ public class Blackjack
 		System.out.println("Dealer has a total of " + DCT + ".");
 		
 		if(PCT > DCT)
+		{
 			System.out.println("\nYou win!");
+			PlayerWager = 2 * PlayerWager;
+			System.out.println("You have doubled your wager to " + PlayerWager + " dollars.");
+		}
 		else if(DCT > PCT)
+		{
 			System.out.println("\nDealer wins!");
+			System.out.println("You lose your wager of " + PlayerWager + " dollars.");
+		}
 		else if (DCT == PCT)
 			System.out.println("\nIt's a tie. Dealer wins on ties!");
 	}
+
 }
